@@ -7,8 +7,11 @@
           <%= f.input :address %>
           <%= f.input :phone_number %>
           <%= f.input :category, collection: ['chinese', 'italian', 'japanese', 'french', 'belgian'] %>
-          <%= f.submit "Add", class: "btn btn-primary" %>
+          <%= f.submit "Add", class: "btn btn-primary form-control" %>
         <% end %>
+        <br>
+        <%= link_to "Back", restaurants_path, class: "btn btn-primary form-control" %>
+
      </div>
   </div>
 </div>
