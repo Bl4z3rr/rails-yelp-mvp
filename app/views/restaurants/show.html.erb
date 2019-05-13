@@ -1,3 +1,17 @@
-<h1>Restaurants <%= @restaurant.name %></h1>
+<h1 class="text-center">Restaurants <%= @restaurant.name %></h1>
 
-<%= link_to "Back to the list", restaurants_path %>
+<h2 class="text-center"><strong>Reviews:</strong></h2>
+  <% @restaurant.reviews.each do |review| %>
+    <p class="text-center"><%= review.content %></p>
+    <p class="text-center"><%= review.rating %></p>
+
+  <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <%= link_to "Add review", new_restaurant_review_path(@restaurant), class: "btn btn-primary m-2 d-block" %>
+      <%= link_to "Back to the list", restaurants_path, class: "btn btn-primary m-2 d-block" %>
+    </div>
+  </div>
+</div>
